@@ -546,6 +546,7 @@ describe('OpenCode env runtime', () => {
     expect(shellCalls.length).toBeGreaterThan(0);
     for (const call of shellCalls) {
       expect(call.args).toContain('-lic');
+      expect(call.options.detached).toBe(true);
       expect(call.options.timeout).toBe(5_000);
     }
   });

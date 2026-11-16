@@ -263,6 +263,7 @@ export const createOpenCodeEnvRuntime = (deps) => {
 
       try {
         const result = runSpawnSync(shellPath, ['-lic', LOGIN_SHELL_ENV_COMMAND], {
+          detached: true,
           encoding: 'utf8',
           stdio: ['ignore', 'pipe', 'pipe'],
           maxBuffer: 10 * 1024 * 1024,
@@ -514,6 +515,7 @@ export const createOpenCodeEnvRuntime = (deps) => {
       if (!isExecutable(shell)) continue;
       try {
         const result = runSpawnSync(shell, ['-lic', 'command -v opencode'], {
+          detached: true,
           encoding: 'utf8',
           stdio: ['ignore', 'pipe', 'pipe'],
           windowsHide: true,
@@ -583,6 +585,7 @@ export const createOpenCodeEnvRuntime = (deps) => {
       if (!isExecutable(shell)) continue;
       try {
         const result = runSpawnSync(shell, ['-lic', 'command -v node'], {
+          detached: true,
           encoding: 'utf8',
           stdio: ['ignore', 'pipe', 'pipe'],
           windowsHide: true,
@@ -666,6 +669,7 @@ export const createOpenCodeEnvRuntime = (deps) => {
       if (!isExecutable(shell)) continue;
       try {
         const result = runSpawnSync(shell, ['-lic', 'command -v bun'], {
+          detached: true,
           encoding: 'utf8',
           stdio: ['ignore', 'pipe', 'pipe'],
           windowsHide: true,
